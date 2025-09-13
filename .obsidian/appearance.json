@@ -1,0 +1,13 @@
+{
+  "cssTheme": "Minimal",
+  "theme": "system",
+  "showRibbon": false,
+  "showViewHeader": true,
+  "enabledCssSnippets": [
+    "headings",
+    "code-block-no-wrap"
+  ],
+  "interfaceFontFamily": "Avenir",
+  "textFontFamily": "Avenir",
+  "monospaceFontFamily": "Jetbrains Mono"
+}

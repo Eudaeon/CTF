@@ -1,0 +1,160 @@
+{
+  "main": {
+    "id": "7e33c4733be973e0",
+    "type": "split",
+    "children": [
+      {
+        "id": "c170ae52b773ace6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5c5cd70423c1c7b9",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d2aefacd65ce0912",
+    "type": "split",
+    "children": [
+      {
+        "id": "1386164b1f262c05",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8517fd8ccb9bb9cd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "dc26b1be5caa2417",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "32c7a7eaeef5d0fa",
+    "type": "split",
+    "children": [
+      {
+        "id": "f169fdd3b86c1861",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "001e7126a97a74a5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "lucide-ghost",
+              "title": "backlink"
+            }
+          },
+          {
+            "id": "01ed7bd9aeca508d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "lucide-ghost",
+              "title": "outgoing-link"
+            }
+          },
+          {
+            "id": "d0afcbc6734fba14",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-ghost",
+              "title": "tag"
+            }
+          },
+          {
+            "id": "609c18b49b51de91",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "5c5cd70423c1c7b9",
+  "lastOpenFiles": [
+    "Hack The Box/Machines",
+    "Hack The Box/Sherlocks",
+    "Hack The Box/Challenges/Web",
+    "Hack The Box/Challenges",
+    "Hack The Box",
+    "Welcome.md"
+  ]
+}
