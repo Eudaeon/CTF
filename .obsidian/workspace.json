@@ -21,8 +21,21 @@
               "icon": "lucide-file",
               "title": "Simple Encryptor"
             }
+          },
+          {
+            "id": "255dc7e552420580",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.12"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.12"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -152,7 +165,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5c5cd70423c1c7b9",
+  "active": "255dc7e552420580",
   "lastOpenFiles": [
     "Hack The Box/Challenges/Reversing/Simple Encryptor.md",
     "Hack The Box/Challenges/Reversing",
