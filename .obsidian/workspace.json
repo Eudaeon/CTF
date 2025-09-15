@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hack The Box/Challenges/Reversing/Scrambled Payload.md",
+                "file": "Hack The Box/Challenges/Reversing/FlagCasino.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Scrambled Payload"
+              "title": "FlagCasino"
             }
           }
         ],
@@ -70,7 +70,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "sca",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -81,7 +81,8 @@
               "title": "Search"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -147,20 +148,21 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Hack The Box/Challenges/Reversing/FlagCasino.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of FlagCasino"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -168,11 +170,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "255dc7e552420580",
+  "active": "dc26b1be5caa2417",
   "lastOpenFiles": [
-    "Hack The Box/Challenges/Reversing/SpookyPass.md",
+    "Hack The Box/Challenges/Reversing/CryptOfTheUndead.md",
+    "Hack The Box/Challenges/Reversing/FlagCasino.md",
+    "Hack The Box/Challenges/Reversing/Graverobber.md",
     "Hack The Box/Challenges/Reversing/Scrambled Payload.md",
     "Hack The Box/Challenges/Reversing/Simple Encryptor.md",
+    "Hack The Box/Challenges/Reversing/SpookyPass.md",
+    "Assets/Pasted image 20250915141903.png",
+    "Assets",
     "Hack The Box/Challenges/Forensics",
     "Hack The Box/Challenges/Reversing",
     "Hack The Box/Machines",

@@ -34,7 +34,7 @@ int main(void) {
 
     local_10 = *(long*)(in_FS_OFFSET + 0x28);
     puts("Welcome to the \x1b[1;3mSPOOKIEST\x1b[0m party of the year.");
-    printf("Before we let you in, you\'ll need to give us the password: ");
+    printf("Before we let you in, you'll need to give us the password: ");
     fgets(local_98, 0x80, stdin);
     pcVar2 = strchr(local_98, 10);
     if (pcVar2 != (char*)0x0) {
