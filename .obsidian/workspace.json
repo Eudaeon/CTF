@@ -26,12 +26,15 @@
             "id": "255dc7e552420580",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.9.12"
+                "file": "Hack The Box/Challenges/Reversing/Scrambled Payload.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.9.12"
+              "icon": "lucide-file",
+              "title": "Scrambled Payload"
             }
           }
         ],
@@ -106,8 +109,8 @@
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
               },
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "backlink"
             }
           },
           {
@@ -119,8 +122,8 @@
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "outgoing-link"
             }
           },
           {
@@ -134,8 +137,8 @@
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "tag"
             }
           },
           {
@@ -161,13 +164,16 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false
+      "bases:Create new base": false,
+      "command-palette:Open command palette": false
     }
   },
   "active": "255dc7e552420580",
   "lastOpenFiles": [
+    "Hack The Box/Challenges/Reversing/SpookyPass.md",
+    "Hack The Box/Challenges/Reversing/Scrambled Payload.md",
     "Hack The Box/Challenges/Reversing/Simple Encryptor.md",
+    "Hack The Box/Challenges/Forensics",
     "Hack The Box/Challenges/Reversing",
     "Hack The Box/Machines",
     "Hack The Box/Sherlocks",
