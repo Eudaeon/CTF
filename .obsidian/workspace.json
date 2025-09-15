@@ -36,9 +36,21 @@
               "icon": "lucide-file",
               "title": "Shattered Tablet"
             }
+          },
+          {
+            "id": "8e710e55dec80902",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.12"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.12"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -147,13 +159,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hack The Box/Challenges/Reversing/Shattered Tablet.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Shattered Tablet"
+              "title": "Outline"
             }
           }
         ],
@@ -169,7 +180,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "255dc7e552420580",
+  "active": "8e710e55dec80902",
   "lastOpenFiles": [
     "Hack The Box/Challenges/Reversing/Hunting License.md",
     "Hack The Box/Challenges/Reversing/Shattered Tablet.md",
