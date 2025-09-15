@@ -11,10 +11,15 @@
             "id": "5c5cd70423c1c7b9",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Hack The Box/Challenges/Reversing/Simple Encryptor.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Simple Encryptor"
             }
           }
         ]
@@ -150,6 +155,8 @@
   },
   "active": "5c5cd70423c1c7b9",
   "lastOpenFiles": [
+    "Hack The Box/Challenges/Reversing/Simple Encryptor.md",
+    "Hack The Box/Challenges/Reversing",
     "Hack The Box/Machines",
     "Hack The Box/Sherlocks",
     "Hack The Box/Challenges/Web",
