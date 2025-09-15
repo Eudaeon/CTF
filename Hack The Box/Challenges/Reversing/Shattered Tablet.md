@@ -65,9 +65,10 @@ The flag is compared character by character.
 ```py
 import angr
 
+BIN = "./tablet"
 TARGET_ADDR = 0x401371
 
-proj = angr.Project("./tablet", auto_load_libs=False)
+proj = angr.Project(BIN, auto_load_libs=False)
 start_state = proj.factory.entry_state()
 simgr = proj.factory.simulation_manager(start_state)
 simgr.explore(find=TARGET_ADDR)
