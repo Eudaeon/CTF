@@ -43,13 +43,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hack The Box/Challenges/Reversing/TinyPlatformer.md",
+                "file": "Hack The Box/Challenges/Reversing/Industry Secret.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "TinyPlatformer"
+              "title": "Industry Secret"
             }
           }
         ],
@@ -162,13 +162,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hack The Box/Challenges/Reversing/TinyPlatformer.md",
+                "file": "Hack The Box/Challenges/Reversing/Industry Secret.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of TinyPlatformer"
+              "title": "Outline of Industry Secret"
             }
           }
         ],
@@ -186,8 +186,11 @@
   },
   "active": "8e710e55dec80902",
   "lastOpenFiles": [
-    "Hack The Box/Challenges/Reversing/Behind the Scenes.md",
+    "Useful.md",
+    "Hack The Box/Challenges/Reversing/Industry Secret.md",
     "Hack The Box/Challenges/Reversing/TinyPlatformer.md",
+    "Assets/Pasted image 20250915182214.png",
+    "Hack The Box/Challenges/Reversing/Behind the Scenes.md",
     "Hack The Box/Challenges/Reversing/WIDE.md",
     "Hack The Box/Challenges/Reversing/Simple Encryptor.md",
     "Hack The Box/Challenges/Reversing/Shattered Tablet.md",
