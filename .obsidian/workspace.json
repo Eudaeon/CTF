@@ -180,21 +180,20 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false
+      "command-palette:Open command palette": false
     }
   },
   "active": "8e710e55dec80902",
   "lastOpenFiles": [
-    "Useful.md",
+    "Hack The Box/Challenges/Reversing/Scrambled Payload.md",
     "Hack The Box/Challenges/Reversing/Industry Secret.md",
+    "Useful.md",
     "Hack The Box/Challenges/Reversing/TinyPlatformer.md",
     "Assets/Pasted image 20250915182214.png",
     "Hack The Box/Challenges/Reversing/Behind the Scenes.md",
     "Hack The Box/Challenges/Reversing/WIDE.md",
     "Hack The Box/Challenges/Reversing/Simple Encryptor.md",
     "Hack The Box/Challenges/Reversing/Shattered Tablet.md",
-    "Hack The Box/Challenges/Reversing/Scrambled Payload.md",
     "Hack The Box/Challenges/Reversing/CryptOfTheUndead.md",
     "Hack The Box/Challenges/Reversing/FlagCasino.md",
     "Hack The Box/Challenges/Reversing/SpookyPass.md",

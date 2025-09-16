@@ -8,7 +8,7 @@
 zephyr.elf: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
 ```
 
-Run on fdsfsd board:
+Run on nRF board:
 
 ```plaintext
 *** Using Zephyr OS v3.7.99-1f8f3dc29142 ***
@@ -30,3 +30,7 @@ There's a secret `d` command.
 ```c
 d
 ```
+
+The fsdfsdf
+
+The ciphertext we have is `f46bf017204bd2629ab18bd177f1661f29b40beb`.
