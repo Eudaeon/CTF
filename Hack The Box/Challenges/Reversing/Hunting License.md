@@ -66,7 +66,7 @@ Passwords:
 
 1. `PasswordNumeroUno`
 2. `0wTdr0wss4P` reversed, which is `P4ssw0rdTw0`
-3. `\x47\x7b\x7a\x61\x77\x52\x7d\x77\x55\x7a\x7d\x72\x7f\x32\x32\x32` XOR'ed with key 19, which is `ThirdAndFinal!!!`
+3. Hardcoded string XOR'ed with key 19, which is `ThirdAndFinal!!!`
 
 ```plaintext
 ┌──(quickemu㉿hacking-kali)-[/workspace/rev_hunting_license]

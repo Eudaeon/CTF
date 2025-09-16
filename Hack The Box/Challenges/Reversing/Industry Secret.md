@@ -135,8 +135,8 @@ LAB_00000338:
 There's a secret `secretpassword <PASSWORD>` command. The whole line should be 20 characters long, and is processed by the binary before being compared against a hardcoded string.
 
 ```c
-const char DAT_00005a1c[4] = {0x29, 0xb4, 0x0b, 0xeb}
-const char DAT_00005a18[4] = {0x00, 0x00, 0x01, 0x03} 
+const char DAT_00005a1c[4] = {0x00, 0x01, 0x03, 0x02}
+const char DAT_00005a18[4] = {0x06, 0x03, 0x05, 0x04} 
 
 uchar encode(uchar o,int index){
   byte bVar1;
@@ -155,8 +155,8 @@ uchar encode(uchar o,int index){
     unaff_r4 = 2;
   }
   else if (iVar3 - 1U < 4) {
-    unaff_r4 = (uint)(byte)(&DAT_00005a1c)[iVar3];
-    uVar5 = (uint)(byte)(&DAT_00005a18)[iVar3];
+    unaff_r4 = (uint)(byte)(&DAT_00005a1c)[iVar3 - 1U];
+    uVar5 = (uint)(byte)(&DAT_00005a18)[iVar3 - 1U];
   }
   else {
     uVar5 = 0;
@@ -221,16 +221,10 @@ uchar shuffle(uchar x){
 }
 ```
 
-The binary iterates over each character of the command. Each character is permuted, and.
+The binary iterates over each character of the command. Each character is substituted, and the resulting value is modified depending on the index of the character in the string.
 
-```plaintext
-s => .
-c => 8
+Reverse the process with:
 
-...
-final
-
-e => z
+```py
+ds
 ```
-
-The ciphertext we have is `f46bf017204bd2629ab18bd177f1661f29b40beb`.
