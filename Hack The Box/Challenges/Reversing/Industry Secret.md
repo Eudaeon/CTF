@@ -214,7 +214,7 @@ switchD_00000252_default:
 
 uchar shuffle(uchar x){
   if ((byte)(x - 0x21) < 0x5e) {
-    x = "B2yO^?3[1$g5*,JKI4zsowp~HWT(9)ZUtLk\\7\";rxb|RQnP]!G`mD+e'>{Yhc/a0CN8q=}A<vSX&f@i_u6.-E#Vl j:%FdM"
+    x = "B2yO^?3[1$g5*,JKI4zsowp~HWT(9)ZUtLk\\7\";rxb|RQnP]!G`mD+e'>{Yhc/a0CN8q=}A<vSX&f@i_u6.-E#Vlj:%FdM"
         [(byte)(x - 0x21)];
   }
   return x;
@@ -226,5 +226,53 @@ The binary iterates over each character of the command. Each character is substi
 Reverse the process with:
 
 ```py
-ds
+CIPHERTEXT = "f46bf017204bd2629ab18bd177f1661f29b40beb"
+
+DAT_00005a1c = [0x00, 0x01, 0x03, 0x02]
+DAT_00005a18 = [0x06, 0x03, 0x05, 0x04]
+
+shuffle_string = "B2yO^?3[1$g5*,JKI4zsowp~HWT(9)ZUtLk\\7\";rxb|RQnP]!G`mD+e'>{Yhc/a0CN8q=}A<vSX&f@i_u6.-E#Vlj:%FdM"
+inv_shuffle = {ord(c): i + 0x21 for i, c in enumerate(shuffle_string)}
+
+reverse_cases = {
+    0: 0x62,
+    1: 2,
+    2: 0x56,
+    3: 0xF6,
+    4: 0x46,
+    5: 0xC,
+    6: 0x99,
+    7: 0x14,
+    8: 0x85,
+    9: 0xAB,
+    10: 0xBA,
+}
+
+encoded_bytes = bytes.fromhex(CIPHERTEXT)
+decoded_chars = []
+
+for i, c in enumerate(encoded_bytes):
+    uVar2 = (c + reverse_cases[i % 0xB]) & 0xFF
+
+    iVar3 = i % 5
+    if iVar3 == 0:
+        unaff_r4, uVar5 = 2, 5
+    else:
+        unaff_r4, uVar5 = DAT_00005a1c[iVar3 - 1], DAT_00005a18[iVar3 - 1]
+
+    uVar4 = 1 << unaff_r4
+    uVar2 = (
+        ((uVar4 & uVar2) >> unaff_r4) << uVar5
+        | ((1 << uVar5 & uVar2) >> uVar5) << unaff_r4
+    ) & 0xFF | uVar2 & ~(uVar4 | 1 << uVar5)
+
+    decoded_char = inv_shuffle.get(uVar2, uVar2)
+    decoded_chars.append(chr(decoded_char))
+
+decoded_string = "".join(decoded_chars)
+print(decoded_string)
+```
+
+```plaintext
+HTB{H4CKED_H4RDWARE}
 ```
