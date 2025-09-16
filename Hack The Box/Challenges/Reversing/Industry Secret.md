@@ -223,4 +223,14 @@ uchar shuffle(uchar x){
 
 The binary iterates over each character of the command. Each character is permuted, and.
 
+```plaintext
+s => .
+c => 8
+
+...
+final
+
+e => z
+```
+
 The ciphertext we have is `f46bf017204bd2629ab18bd177f1661f29b40beb`.
