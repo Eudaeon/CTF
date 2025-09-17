@@ -289,6 +289,10 @@ void main(void) {
 
 This blinks a LED to create a Morse code.
 
+```plaintext
+.... - -... .- -. --- .. ... -.-- -... ..- --.. --.. . .-. -.-. --- -- -- .- -. -.. ... .- - - . -. - .. --- -.
 ```
 
-```
+Translates to `HTBANOISYBUZZERCOMMANDSATTENTION`.
+
+Flag: `HTB{A NOISY BUZZER COMMANDS ATTENTION}`
