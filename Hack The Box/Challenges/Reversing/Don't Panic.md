@@ -8,7 +8,7 @@
 dontpanic: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=ea636c24aa596a8aac8801e4b5e2507007a264aa, for GNU/Linux 3.2.0, with debug_info, not stripped
 ```
 
-Rnu:
+Run:
 
 ```plaintext
 ┌──(quickemu㉿hacking-kali)-[/workspace/rev_dontpanic]
@@ -139,6 +139,51 @@ undefined8 __rustcall core::ops::function::FnOnce::call_once(byte param_1) {
 ```
 
 Binary uses closures (anonymous functions) to check each input character, so this creates one function per character.
+
+r2 version:
+
+```py
+import r2pipe
+
+r2 = r2pipe.open("./dontpanic")
+r2.cmd("aaa")
+
+funcs = r2.cmdj("aflj")
+check_func = [f for f in funcs if "check_flag" in (f.get("name") or "")][0].get("name")
+
+disasm = r2.cmdj(f"pdfj @{check_func}")
+regs = {}
+closures = []
+for op in disasm.get("ops", []):
+    disasm_str = op.get("disasm", "")
+    if (
+        disasm_str.startswith("lea r")
+        and ", [sym.core::ops::function::FnOnce::call_once::" in disasm_str
+    ):
+        reg = disasm_str.split(", ")[0].split(" ")[1]
+        closure = disasm_str.split(", ")[1].split("[")[-1].strip("]")
+        regs[reg] = closure
+    elif disasm_str.startswith("mov qword [rsp + 0x"):
+        reg = disasm_str.split(", ")[1].strip()
+        if not reg.isdigit():
+            closure = regs[reg]
+            closures.append(closure)
+
+flag = []
+for closure in closures:
+    disasm = r2.cmdj(f"pdfj @{closure}")
+    for op in disasm.get("ops", []):
+        disasm_str = op.get("disasm", "")
+        if disasm_str.startswith("cmp dil, "):
+            flag.append(chr(int(disasm_str.split(", ")[1], 16)))
+print("".join(flag))
+```
+
+```plaintext
+HTB{d0nt_p4n1c_justc4tch_the_3rror}
+```
+
+Ghidra version:
 
 ```py
 import ghidra_bridge
