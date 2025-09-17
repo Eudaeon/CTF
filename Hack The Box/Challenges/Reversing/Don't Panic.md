@@ -141,22 +141,50 @@ undefined8 __rustcall core::ops::function::FnOnce::call_once(byte param_1) {
 Binary uses closures (anonymous functions) to check each input character, so this creates one function per character.
 
 ```py
-import angr
+import ghidra_bridge
+from pwn import *
 
-BIN = "./dontpanic"
-TARGET_ADDR = 0x10936a
+START_ADDR = 0x10912D
 
-proj = angr.Project(BIN, auto_load_libs=False)
-start_state = proj.factory.entry_state()
-simgr = proj.factory.simulation_manager(start_state)
-simgr.explore(find=TARGET_ADDR)
 
-if simgr.found:
-    st = simgr.found[0]
-    input = st.posix.dumps(0)
-    print(input.strip(b"\x00").decode())
+def getAddress(offset):
+    return (
+        currentProgram.getAddressFactory().getDefaultAddressSpace().getAddress(offset)
+    )
+
+
+with ghidra_bridge.GhidraBridge(namespace=globals()):
+    listing = currentProgram.getListing()
+    fn_body = (
+        currentProgram.getFunctionManager()
+        .getFunctionContaining(getAddress(START_ADDR))
+        .getBody()
+    )
+    instructions = listing.getInstructions(fn_body, True)
+    regs = {}
+    offsets = {}
+
+    flag = ""
+    progress_log = log.progress("Flag")
+    for instruction in instructions:
+        if str(instruction).startswith("LEA R"):
+            reg = instruction.getOpObjects(0)[0]
+            op = instruction.getOpObjects(1)[0]
+            if str(op).startswith("0x"):
+                regs[str(reg)] = int(str(op), 16)
+        if str(instruction).startswith("MOV qword ptr [RSP + 0x"):
+            reg = instruction.getOpObjects(1)[0]
+            try:
+                closure_addr = regs.get(str(reg), None)
+                closure_inst = getInstructionAt(getAddress(closure_addr + 1))
+                value = closure_inst.getOpObjects(1)[0]
+                flag += chr(int(str(value), 16))
+                progress_log.status(flag)
+            except:
+                pass
+    progress_log.success(flag)
 ```
 
 ```plaintext
-HTB{br0k3n_4p4rt...n3ver_t0_b3_r3p41r3d}
+[+] Flag: HTB{d0nt_p4n1c_justc4tch_the_3rror}
 ```
