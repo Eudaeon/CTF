@@ -259,3 +259,55 @@ Characters from 9 to 12 are XOR'ed with `\xf0\x00\xba\xaa` and compared against 
 ![[Pasted image 20250919121849.png]]
 
 This should be `_4ND`.
+
+```plaintext
+check_char:
+    0x101bf:     bl      0x1023c
+    0x101c3:     adds    r0, #42
+    0x101c5:     uxtb    r0, r0
+    0x101c7:     cmp     r0, #137
+    0x101c9:     bne.n   0x101ee
+    0x101cb:     udf     #23
+
+call_read_char:
+    0x1023c:     ldr     r0, [pc, #308]
+    0x1023e:     bx      r0
+```
+
+Next is `_`.
+
+```plaintext
+check_char:
+    0x101b1:     bl      0x1023c
+    0x101b4:     subs    r0, #78
+    0x101b6:     uxtb    r0, r0
+    0x101b8:     cmp     r0, #6
+    0x101ba:     bne.n   0x101ee
+    0x101bc:     udf     #24
+```
+
+Next is `T`.
+
+```plaintext
+check_char:
+    0x10202:     bl      0x1023c
+    0x10206:     mvns    r0, r0
+    0x10208:     uxtb    r0, r0
+    0x1020a:     cmp     r0, #151
+    0x1020c:     bne.n   0x101ee
+    0x1020e:     udf     #25
+```
+
+Next is `i`.
+
+```
+check_char:
+    0x101cd:     bl      0x1023c
+    0x101d1:     movs    r1, #204
+    0x101d3:     eors    r0, r1
+    0x101d5:     cmp     r0, #153
+    0x101d7:     bne.n   0x101ee
+    0x101d9:     udf     #26
+```
+
+Flag: `HTB{4rmz_4ND_ThU1234}`
