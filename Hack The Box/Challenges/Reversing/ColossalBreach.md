@@ -6,7 +6,7 @@ Binary and encrypted file.
 
 ```plaintext
 ┌──(quickemu㉿hacking-kali)-[/workspace/rev_colossalbreach]
-└─$ file brainstorm.ko                
+└─$ file brainstorm.ko
 brainstorm.ko: ELF 64-bit LSB relocatable, x86-64, version 1 (SYSV), BuildID[sha1]=b999225b138b38fce83525d548dbc8280b295756, with debug_info, not stripped
 ```
 
@@ -16,7 +16,7 @@ brainstorm.ko: ELF 64-bit LSB relocatable, x86-64, version 1 (SYSV), BuildID[sha
 int spy_cb(notifier_block* nblock, ulong code, void* _param) {
     size_t __n;
     byte* pbVar1;
-    byte* pbVar2; /* WARNING: Subroutine does not return */
+    byte* pbVar2;
     ulong uVar3;
     char* __dest;
     long in_GS_OFFSET;
@@ -71,6 +71,8 @@ Keylogger (kernel module) that uses the DebugFS filesystem. `keys` holds the pre
 ![[Pasted image 20250916152838.png]]
 
 ```plaintext
+┌──(quickemu㉿hacking-kali)-[/workspace/rev_colossalbreach]
+└─$ nc 94.237.51.10 48153
 [Quiz] ColossalBreach
 Enter all answers correctly to receive the flag
 Q1 (Attempt 1/3): Who is the module's author? 0xEr3n

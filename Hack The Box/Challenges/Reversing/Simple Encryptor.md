@@ -62,7 +62,7 @@ The encryption process iterates over each character, XOR's them, and rotates the
 
 The seed used to generate the random numbers is written at the beginning of the encrypted file (first 4 bytes), so this is reversible.
 
-```python
+```py
 import struct
 import ctypes
 

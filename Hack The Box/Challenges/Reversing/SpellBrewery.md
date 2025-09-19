@@ -13,7 +13,25 @@ SpellBrewery.dll: PE32 executable for MS Windows 4.00 (console), Intel i386 Mono
 Run:
 
 ```plaintext
-ds
+┌──(quickemu㉿hacking-kali)-[/workspace/rev_spellbrewery]
+└─$ ./SpellBrewery
+1. List Ingredients
+2. Display Current Recipe
+3. Add Ingredient
+4. Brew Spell
+5. Clear Recipe
+6. Quit
+> 3
+What ingredient would you like to add? Hocus Pocus Powder
+The cauldron fizzes as you toss in a 'Hocus Pocus Powder'...
+7. List Ingredients
+8. Display Current Recipe
+9. Add Ingredient
+10. Brew Spell
+11. Clear Recipe
+12. Quit
+> 4
+The cauldron bubbles as your ingredients melt away. Try another recipe.
 ```
 
 ## Reversing
@@ -44,7 +62,7 @@ private static readonly string[] correct = new string[] {
 };
 ```
 
-Correct ingredients are:
+Correct ingredients are in order:
 
 - `Phantom Firefly Wing`
 - `Ghastly Gourd`
@@ -84,5 +102,25 @@ Correct ingredients are:
 - `Wraith Whisper`
 
 ```plaintext
-d
+┌──(quickemu㉿hacking-kali)-[/workspace/rev_spellbrewery]
+└─$ ./SpellBrewery
+1. List Ingredients
+2. Display Current Recipe
+3. Add Ingredient
+4. Brew Spell
+5. Clear Recipe
+6. Quit
+> 3
+What ingredient would you like to add? Phantom Firefly Wing
+The cauldron fizzes as you toss in a 'Phantom Firefly Wing'...
+...
+The cauldron fizzes as you toss in a 'Wraith Whisper'...
+13. List Ingredients
+14. Display Current Recipe
+15. Add Ingredient
+16. Brew Spell
+17. Clear Recipe
+18. Quit
+> 4
+The spell is complete - your flag is: HTB{y0ur3_4_r34l_p0t10n_m45st3r_n0w}
 ```

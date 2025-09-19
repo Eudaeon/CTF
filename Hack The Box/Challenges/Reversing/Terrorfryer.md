@@ -87,7 +87,7 @@ Output: `TzHLVAnNpJbkdlOsuaCSGwtyIUeojKgcQqmiMhBxRDfErFvP`
 
 Shuffled flag: `1_n3}f3br9Ty{_6_rHnf01fg_14rlbtB60tuarun0c_tr1y3`
 
-```python
+```py
 INPUT = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV"
 OUTPUT = "TzHLVAnNpJbkdlOsuaCSGwtyIUeojKgcQqmiMhBxRDfErFvP"
 SHUFFLED_FLAG = "1_n3}f3br9Ty{_6_rHnf01fg_14rlbtB60tuarun0c_tr1y3"

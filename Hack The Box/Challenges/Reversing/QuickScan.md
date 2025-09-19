@@ -3,6 +3,8 @@
 ## Recon
 
 ```plaintext
+┌──(quickemu㉿hacking-kali)-[/workspace]
+└─$ nc 94.237.61.242 39034
 I am about to send you 128 base64-encoded ELF files, which load a value onto the stack. You must send back the loaded value as a hex string
 You must analyze them all in under 120 seconds
 Let's start with a warmup
