@@ -19,6 +19,8 @@ Wrong!
 
 ## Reversing
 
+Binary is obfuscated with control flow flattening.
+
 ```plaintext
 setup_sigill_handler:
     0x10314:     push    {lr}
@@ -47,6 +49,8 @@ start:
 
 This triggers a SIGILL with value 0.
 
+SIGILLs store the current sigframe onto the stack.
+
 ```plaintext
 retrieve_value_jump_table:
     0x10244:     ldr     r4, [r3]
@@ -70,7 +74,7 @@ retrieve_value_jump_table:
     0x1028c:     bx      lr
 ```
 
-This retrieves the opcode value of the SIGILL that triggered the jump to this, and the value stored at the SIGILL offset in the jump table. This value is then stored at `$sp + 96`.
+This retrieves the opcode value of the SIGILL that triggered the jump to this, and the value stored at the SIGILL offset in the jump table. This value is then stored at `$sp + 92` (`pc` register in sigframe). It also sets the `r7` register in sigframe with the syscall number for `sigaction`.
 
 ```plaintext
 handle_sigreturn:
@@ -78,7 +82,7 @@ handle_sigreturn:
     0x40801483:  svc     0
 ```
 
-Every time a SIGILL instruction is hit, the system makes a `sigreturn` syscall. The `lr` register is populated with the stub that calls it. This restores the stack frame, which is normal when reaching a SIGILL instruction, but here the jump is made purposefully so this will pop a chunk of the stack and move it into registers.
+This makes a `sigreturn` syscall, which restores the environment from the sigframe. This will pop the address stored in the jump table into `pc`, jumping to it.
 
 ```plaintext
 save_state:
@@ -91,3 +95,27 @@ save_state:
 ```
 
 This saves a few registers onto the stack, and triggers a SIGILL with value 20, which goes back to `0x10244`.
+
+```plaintext
+read_char:
+    0x100e8:     mov     r0, #1
+    0x100ec:     mov     r7, #3
+    0x100f0:     svc     0x00000000
+    0x100f4:     udf     #21
+```
+
+The function at offset 20 is used to read a character from stdin.
+
+The jump table should then return the address of the character-checking function.
+
+```plaintext
+restore_state:
+    0x10124:     pop     {r0}
+    0x10128:     pop     {r1, r2, r7}
+    0x1012c:     bx      lr
+    0x10130:     mov     r0, #0
+```
+
+Stores in `r0` character read.
+
+save_state => read_char => restore_state
