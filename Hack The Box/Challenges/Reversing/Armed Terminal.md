@@ -110,7 +110,7 @@ restore_state:
     0x10130:     mov     r0, #0
 ```
 
-These three functions are called to read a character from stdin, which is stored in `r0`.
+These three functions are called to read a character from stdin, which is stored in `r0` before execution is resumed.
 
 Get address in jump table from offset:
 
@@ -172,7 +172,7 @@ check_fourth_char:
     0x100bc:     udf     #9
 ```
 
-The remaining ones are concatenated to form 8 bytes and then compared with computed values.
+The next ones are concatenated to form 8 bytes and then compared with computed values.
 
 ```plaintext
 get_fifth_sixth_seven_eighth_chars_and_join_fifth_with_eighth:
@@ -262,12 +262,12 @@ This should be `_4ND`.
 
 ```plaintext
 check_char:
-    0x101bf:     bl      0x1023c
-    0x101c3:     adds    r0, #42
-    0x101c5:     uxtb    r0, r0
-    0x101c7:     cmp     r0, #137
-    0x101c9:     bne.n   0x101ee
-    0x101cb:     udf     #23
+    0x101be:     bl      0x1023c
+    0x101c2:     adds    r0, #42
+    0x101c4:     uxtb    r0, r0
+    0x101c6:     cmp     r0, #137
+    0x101c8:     bne.n   0x101ee
+    0x101ca:     udf     #23
 
 call_read_char:
     0x1023c:     ldr     r0, [pc, #308]
@@ -278,12 +278,12 @@ Next is `_`.
 
 ```plaintext
 check_char:
-    0x101b1:     bl      0x1023c
+    0x101b0:     bl      0x1023c
     0x101b4:     subs    r0, #78
     0x101b6:     uxtb    r0, r0
     0x101b8:     cmp     r0, #6
     0x101ba:     bne.n   0x101ee
-    0x101bc:     udf     #24
+    0x101bc:     udf     #2
 ```
 
 Next is `T`.
@@ -298,16 +298,65 @@ check_char:
     0x1020e:     udf     #25
 ```
 
-Next is `i`.
+Next is `h`.
 
-```
+```plaintext
 check_char:
-    0x101cd:     bl      0x1023c
-    0x101d1:     movs    r1, #204
-    0x101d3:     eors    r0, r1
-    0x101d5:     cmp     r0, #153
-    0x101d7:     bne.n   0x101ee
-    0x101d9:     udf     #26
+    0x101cc:     bl      0x1023c
+    0x101d0:     movs    r1, #204
+    0x101d2:     eors    r0, r1
+    0x101d4:     cmp     r0, #153
+    0x101d6:     bne.n   0x101ee
+    0x101d8:     udf     #26
 ```
 
-Flag: `HTB{4rmz_4ND_ThU1234}`
+Next is `U`.
+
+```plaintext
+check_char:
+    0x101da:     bl      0x1023c
+    0x101de:     subs    r0, #12
+    0x101e0:     uxtb    r0, r0
+    0x101e2:     cmp     r0, #65
+    0x101e4:     bne.n   0x101ee
+    0x101e6:     udf     #27
+```
+
+Next is `M`.
+
+```plaintext
+check_char:
+    0x10210:     bl      0x1023c
+    0x10214:     adds    r0, #123
+    0x10216:     uxtb    r0, r0
+    0x10218:     cmp     r0, #221
+    0x1021a:     bne.n   0x101ee
+    0x1021c:     udf     #28
+```
+
+Next is `b`.
+
+```plaintext
+check_char:
+    0x101f0:     bl      0x1023c
+    0x101f4:     mvns    r0, r0
+    0x101f6:     uxtb    r0, r0
+    0x101f8:     cmp     r0, #165
+    0x101fa:     bne.n   0x101ee
+    0x101fc:     bl      0x1023c
+    0x10200:     udf     #29
+```
+
+Next is `Z`.
+
+```plaintext
+check_char:
+    0x101e8:     cmp     r0, #125
+    0x101ea:     bne.n   0x101ee
+    0x101ec:     udf     #2
+    0x101ee:     udf     #4
+```
+
+Last is `}`.
+
+Flag: `HTB{4rmz_4ND_ThUMbZ}`
