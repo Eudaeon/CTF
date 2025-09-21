@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hack The Box/Challenges/Reversing/Secured Transfer.md",
+                "file": "Hack The Box/Challenges/Reversing/Golfer - Part 1.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Secured Transfer"
+              "title": "Golfer - Part 1"
             }
           }
         ]
@@ -54,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "nc",
+                "query": "Discu",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -131,13 +131,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hack The Box/Challenges/Reversing/Secured Transfer.md",
+                "file": "Hack The Box/Challenges/Reversing/Golfer - Part 1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Secured Transfer"
+              "title": "Outline of Golfer - Part 1"
             }
           }
         ],
@@ -149,16 +149,29 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "90ebfa05d7a25c57",
   "lastOpenFiles": [
+    "Hack The Box/Challenges/Reversing/Armed Terminal.md",
+    "Hack The Box/Challenges/Reversing/Golfer - Part 1.md",
+    "Hack The Box/Challenges/Reversing/Up a Stream.md",
+    "Hack The Box/Challenges/Reversing/ChromeMiner.md",
+    "Assets/Pasted image 20250921112644.png",
     "Hack The Box/Challenges/Reversing/Potion Master.md",
+    "Hack The Box/Challenges/Reversing/Ouija.md",
+    "Assets/Pasted image 20250921110711.png",
+    "Assets/Pasted image 20250921110622.png",
+    "Hack The Box/Challenges/Reversing/Spooky License.md",
+    "Hack The Box/Challenges/Reversing/Shattered Tablet.md",
     "Hack The Box/Challenges/Reversing/Secured Transfer.md",
+    "Assets/Pasted image 20250921105446.png",
+    "Assets/Pasted image 20250921105337.png",
+    "Assets/Pasted image 20250921105313.png",
     "Hack The Box/Challenges/Reversing/Encryption Bot.md",
     "Hack The Box/Challenges/Reversing/Simple Encryptor.md",
-    "Hack The Box/Challenges/Reversing/Shattered Tablet.md",
     "Hack The Box/Challenges/Reversing/Scrambled Payload.md",
     "Hack The Box/Challenges/Reversing/QuickScan.md",
     "Hack The Box/Challenges/Reversing/LinkHands.md",
@@ -169,7 +182,6 @@
     "Hack The Box/Challenges/Reversing/FlagCasino.md",
     "Hack The Box/Challenges/Reversing/Cyberpsychosis.md",
     "Hack The Box/Challenges/Reversing/ARMs Race.md",
-    "Hack The Box/Challenges/Reversing/Armed Terminal.md",
     "Hack The Box/Challenges/Reversing/Crushing.md",
     "Assets/Pasted image 20250919121849.png",
     "Assets/Pasted image 20250919120824.png",
@@ -177,14 +189,8 @@
     "Hack The Box/Challenges/Reversing/ColossalBreach.md",
     "Hack The Box/Challenges/Reversing/CryptOfTheUndead.md",
     "Hack The Box/Challenges/Reversing/Behind the Scenes.md",
-    "Hack The Box/Challenges/Reversing/Terrorfryer.md",
-    "Hack The Box/Challenges/Reversing/WIDE.md",
-    "Hack The Box/Challenges/Reversing/TinyPlatformer.md",
-    "Hack The Box/Challenges/Reversing/SpookyPass.md",
-    "Hack The Box/Challenges/Reversing/Don't Panic.md",
     "Assets/Pasted image 20250916152838.png",
     "Assets/Pasted image 20250915182214.png",
-    "Assets/Pasted image 20250915141903.png",
     "Assets",
     "Hack The Box/Challenges/Forensics",
     "Hack The Box/Challenges/Reversing",
