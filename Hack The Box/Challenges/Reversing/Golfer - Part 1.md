@@ -35,7 +35,7 @@ entry0:
     0x080000aa:     call fcn.0800012f
     0x080000af:     mov ecx, 0x800000d
     0x080000b4:     call fcn.0800012f
-    0x080000b9:     mov ecx, 0x8000022'
+    0x080000b9:     mov ecx, 0x8000022
     0x080000be:     call fcn.0800012f
     0x080000c3:     mov ecx, 0x8000021
     0x080000c8:      call fcn.0800012f
@@ -71,4 +71,8 @@ fcn.0800012f:
     0x08000137:     ret
 ```
 
-Binary starts by jumping straight to the end, which triggers a sysca
+Binary starts by jumping straight to the end, which triggers a syscall to `exit`.
+
+Without this jump, the binary sets addreses in `ecx` and makes syscalls to `write` to write 1 byte of the value stored at the address in `ecx.`
+
+Flag: `HTB{y0U_4R3_a_g0lf3r}`
