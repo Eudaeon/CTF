@@ -18,6 +18,14 @@ Features:
 - Sending a signal (64 by default) to any PID makes the given user become root
 - Files or directories starting with the `MAGIC_PREFIX` (`diamorphine_secret` by default) become invisible
 
+We also have shell on the system.
+
+```plaintext
+┌──(quickemu㉿hacking-kali)-[/workspace]
+└─$ nc 94.237.49.23 42382
+~ $
+```
+
 ## Reversing
 
 Build project from source and compare with given binary.
@@ -94,20 +102,42 @@ int hacked_kill(pt_regs* pt_regs) {
 - Signal 64 to make the given user become root
 - Signal 31 to hide/unhide any process
 
+Become root:
+
 ```plaintext
 ~ $ kill -64 1
-kill -64 1
+~ #
+```
 
-/root # lsmod
-lsmod
-diamorphine 16384 0 - Live 0xffffffffc03c0000 (OE)
+Unhide rootkit:
 
-rmmod diamorphine
+```plaintext
+~ # kill -46 1
+```
 
-find / -name '*psychosis*' 2>/dev/null
+List kernel modules:
+
+```plaintext
+~ # lsmod   
+diamorphine 16384 0 - Live 0xffffffffc03cf000 (OE)
+```
+
+Delete rootkit:
+
+```plaintext
+~ # rmmod diamorphine
+```
+
+Find files/directories with previously hidden prefix:
+
+```plaintext
+~ # find / -name '*psychosis*' 2>/dev/null
 /opt/psychosis
+```
 
+Get flag:
+
+```plaintext
 /opt/psychosis # cat flag.txt
-cat flag.txt
 HTB{N0w_Y0u_C4n_S33_m3_4nd_th3_r00tk1t_h4s_b33n_sUcc3ssfully_d3f34t3d!!}
 ```
