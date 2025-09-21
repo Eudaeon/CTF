@@ -260,6 +260,8 @@ Characters from 9 to 12 are XOR'ed with `\xf0\x00\xba\xaa` and compared against 
 
 This should be `_4ND`.
 
+At this point the binary enters thumb mode.
+
 ```plaintext
 check_char:
     0x101be:     bl      0x1023c
@@ -269,7 +271,7 @@ check_char:
     0x101c8:     bne.n   0x101ee
     0x101ca:     udf     #23
 
-call_read_char:
+call_read_char_thumb:
     0x1023c:     ldr     r0, [pc, #308]
     0x1023e:     bx      r0
 ```

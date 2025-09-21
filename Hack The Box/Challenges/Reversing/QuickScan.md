@@ -29,12 +29,14 @@ STEPS = 128
 context.log_level = "DEBUG"
 
 io = remote(HOST, PORT)
+
 for _ in range(STEPS + 1):
     io.recvuntil(b"ELF:  ")
     base64_elf = io.recvline().strip().decode()
     elf_data = base64.b64decode(base64_elf)
     with open("challenge.elf", "wb") as f:
         f.write(elf_data)
+
     r2 = r2pipe.open("./challenge.elf")
     r2.cmd("aaa")
     disasm = r2.cmdj("pdfj @entry0")
@@ -52,6 +54,7 @@ for _ in range(STEPS + 1):
     value = r2.cmdj(f"pxj {length} @ {addr}")
     hex_value = "".join(f"{b:02x}" for b in value)
     io.sendlineafter(b"Bytes? ", hex_value.encode())
+
 line = io.recvline().strip().decode()
 print(line)
 ```
